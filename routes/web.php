@@ -39,12 +39,20 @@ Route::get('/produto', function(){
 // Route::get('/produto')->name('produto');
 
 Route::get('/registro', function(){
-    return view('registration'); /* retorna o que vier após o return */
+    return view('register'); /* retorna o que vier após o return */
 });
 
 Route::get('/comprar', function(){
     return view('shopping'); /* retorna o que vier após o return */
 });
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
